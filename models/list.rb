@@ -35,7 +35,7 @@ class List
   end
 
   def to_s
-    hotels.each { |hotel| puts hotel }
+    hotels.join("\n")
   end
 
 end
