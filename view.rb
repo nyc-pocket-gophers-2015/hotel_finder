@@ -39,7 +39,7 @@ class View
     end
 
     def display_error(error)
-      puts "Sorry, I didn't understand... \n#{error}.  Please try again:"
+      puts "Sorry, I didn't understand... \n#{error}. \nPlease try again:"
     end
 
   end
