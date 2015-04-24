@@ -31,6 +31,11 @@ class HotelController
     state = View.get_input
     load(city,state)
     View.display_list(list.hotels)
+    display_options
+  end
+
+  def display_options
+    View.display_menu_options
     View.display_sort_options
     option_selected = View.get_input
     options(option_selected)
@@ -50,8 +55,8 @@ class HotelController
           View.display_error("invalid option")
       end
       View.display_list(list.hotels)
+      display_options
     end
-    options(option_selected)
   end
 
 end
