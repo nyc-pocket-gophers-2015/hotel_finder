@@ -11,8 +11,10 @@ class View
     end
 
     def display_menu_options
-      puts "Type 1 to search for a hotel"
+      display_banner
+      puts "Type 1 to start a new search"
       puts "Type 'q' to exit program"
+      display_banner
     end
 
     def display_ask_for_city
@@ -42,6 +44,10 @@ class View
       puts "Sorry, I didn't understand... \n#{error}. \nPlease try again:"
     end
 
+    def display_banner
+      40.times { print '*' }
+      puts
+    end
   end
 
 end
