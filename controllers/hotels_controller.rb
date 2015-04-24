@@ -39,7 +39,7 @@ class HotelController
   def options(option_selected)
     case option_selected
     when "1" then get_user_inputs
-    when "q" then return
+    when "q" then exit
     else
       case option_selected
       when "name" then list.order_by_name
@@ -51,6 +51,7 @@ class HotelController
       end
       View.display_list(list.hotels)
     end
+    options(option_selected)
   end
 
 end
