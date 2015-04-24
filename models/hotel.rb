@@ -10,7 +10,7 @@ class Hotel
   end
 
   def to_s
-    "Name: #{@name}, Rating: #{hotelRating}, Street Address: #{address1}, Price Range: #{lowRate}-#{highRate}"
+    "#{@name}, Rating: #{hotelRating}, Street Address: #{address1}, Price Range: #{lowRate}-#{highRate} \n\n"
   end
 end
 
