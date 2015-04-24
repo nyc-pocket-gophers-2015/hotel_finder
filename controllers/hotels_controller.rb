@@ -8,8 +8,12 @@ class HotelController
 
   def load (city,state)
     result = Parser.parser_url(city,state)
-    hotels = result.map{|hotel| Hotel.new(hotel)}
-    @list = List.new(hotels)
+    if result.is_a?String
+      View.display_error(result)
+    else
+      hotels = result.map{|hotel| Hotel.new(hotel)}
+      @list = List.new(hotels)
+    end
   end
 
   def setup
@@ -38,7 +42,12 @@ class HotelController
     else
       when "name" then list.order_by_name
       when "rating" then list.order_by_rating
-       View.display_list(list.hotels)
+      when "price high" then list.order_by_price_hi
+      when "price low" then list.order_by_price_lo
+      else
+          View.display_error("invalid option")
+      end
+      View.display_list(list.hotels)
     end
   end
 
