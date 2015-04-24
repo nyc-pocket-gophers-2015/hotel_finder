@@ -15,11 +15,11 @@ class List
   end
 
   def order_by_price_hi
-    hotels.sort{|hotel_a, hotel_b| hotel_b.pricehi <=> hotel_a.pricehi} #may need to change attribute name
+    hotels.sort{|hotel_a, hotel_b| hotel_b.rateHigh <=> hotel_a.rateHigh} #may need to change attribute name
   end
 
   def order_by_price_lo
-    hotels.sort_by{|hotel| hotel.pricelo} #may need to change attribute name
+    hotels.sort_by{|hotel| hotel.rateLow} #may need to change attribute name
   end
 
   def filter_by_rating(checked_rating)
@@ -31,7 +31,7 @@ class List
   end
 
   def filter_by_price_lo(checked_price)
-    hotels.select { |hotel| hotel.pricelo <= checked_price }
+    hotels.select { |hotel| hotel.rateLow <= checked_price }
   end
 
   def to_s
