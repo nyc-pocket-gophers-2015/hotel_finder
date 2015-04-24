@@ -14,21 +14,33 @@ class HotelController
 
   def setup
       View.display_welcome
-      get_user_inputs
+      View.display_menu_options
+      menu_option_selected = View.get_input
+      options(menu_option_selected)
   end
 
   def get_user_inputs
-    View.display "Enter a City :"
+    View.display_ask_for_city
     city = View.get_input
-    View.display "Enter a State : "
+    View.display_ask_for_state(city)
     state = View.get_input
     load(city,state)
-    View.display list
-    View.display options
+    View.display_list(list.hotels)
+    View.display_sort_options
+    option_selected = View.get_input
+    options(option_selected)
   end
 
-  def options
+  def options(option_selected)
+    case option_selected
+    when "1" then get_user_inputs
+    when "q" then return
+    else
+      when "name" then
+        list.order_by_name
+        View.display_list(list.hotels)
 
+    end
   end
 
 end
