@@ -38,6 +38,10 @@ class View
       gets.chomp.downcase
     end
 
+    def display_error(error)
+      puts "Sorry, I didn't understand... \n#{error}.  Please try again:"
+    end
+
   end
 
 end
