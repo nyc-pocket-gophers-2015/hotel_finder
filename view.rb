@@ -3,7 +3,7 @@ class View
   class << self
 
     def display_list(list)
-      list.each {|hotel| puts hotel}
+      puts list
     end
 
     def display_welcome

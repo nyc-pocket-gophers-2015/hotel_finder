@@ -34,4 +34,8 @@ class List
     hotels.select { |hotel| hotel.pricelo <= checked_price }
   end
 
+  def to_s
+    hotels.each { |hotel| puts hotel }
+  end
+
 end
