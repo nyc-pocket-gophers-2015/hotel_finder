@@ -36,10 +36,9 @@ class HotelController
     when "1" then get_user_inputs
     when "q" then return
     else
-      when "name" then
-        list.order_by_name
-        View.display_list(list.hotels)
-
+      when "name" then list.order_by_name
+      when "rating" then list.order_by_rating
+       View.display_list(list.hotels)
     end
   end
 
