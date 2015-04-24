@@ -1,5 +1,7 @@
 class Hotel
 
+  attr_reader :name, :hotelRating, :address1, :lowRate, :highRate
+
   def initialize args
     args.each do |k,v|
       key = k.to_s.delete("@")
